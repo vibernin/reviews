@@ -28,8 +28,8 @@
 	  
 	function make_upload($file){	
 		$name = mt_rand(0, 10000) . $file['name'];
-		copy($file['tmp_name'], 'photo/' . $name);
-		return '/photo/' . $name;
+		copy($file['tmp_name'], $name);
+		return $name;
 	}
 	if(isset($_FILES['file'])) {
 		$check = can_upload($_FILES['file']);
